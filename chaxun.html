@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			body{font-family: "微软雅黑";font-size: 14px;color: #666;}
+			.rel{position: relative;top: 0;left: 0;}/*相对定位*/
+			.abs{position: absolute;top: 0;right: 0;}/*绝对定位*/
+			h3>span.small{text-decoration: line-through;}
+		</style>
+	</head>
+	<body>
+		<!--
+        	作者：念
+        	时间：2016-10-26
+        	描述：导航
+        -->
+        <div>
+			<div class="container-fluid nav navbar navbar-fixed-top navbar-inverse rel" role="navigation">
+				<div class="container ">
+					<div class="navbar-header navbar-left">
+						<button type="button" class="navbar-toggle nav-btn" data-toggle="collapse" data-target="#meitong-nav">
+							<span class="sr-only">美瞳</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand text-center" >美瞳网</a>
+					</div>
+					<div class="collapse navbar-collapse navbar-left" id="meitong-nav">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">首页</a></li>
+							<li><a href="index1.html#dianzhutuijian">店主推荐</a></li>
+							<li><a href="index1.html#xinpinshangshi">新品上市</a></li>
+							<li><a href="index1.html#huliye">护理液</a></li>
+							<li><a href="index1.html#rexiao">热销</a></li>
+							<li class="hidden-xs"><a href="#">官方微信</a></li>
+							<li class="hidden-xs"><a href="#">官方微博</a></li>
+						</ul>
+					</div>
+					<form class="navbar-form navbar-right" role="search">
+					  	<div class="input-group">
+					    	<input type="text" class="form-control" placeholder="Search">
+					    	<span class="input-group-addon glyphicon glyphicon-search rel pointer" ></span>
+					  	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div>
+							<span class="glyphicon glyphicon-home"></span>
+							您当前的位置：
+							<a href="#">首页</a>
+							>>
+							<a href="#" id="fenlei">Neo</a>
+							>>
+							<a href="#" id="changpin">女皇四色</a>
+						</div>
+						<div class="clearfix row" id="hot-search">
+							<h4 class="col-md-12 col-xs-12">
+								热门搜索推荐：
+							</h4>
+							<div class="col-xs-12 row">
+								<a href="#" class="col-md-2 col-xs-6">大美目月抛琥珀 </a>
+								<a href="#" class="col-md-2 col-xs-6"> LUNAVIEW</a>
+								<a href="#" class="col-md-2 col-xs-6">新品美瞳热卖</a>
+								<a href="#" class="col-md-2 col-xs-6">美妆促销活动</a>
+								<a href="#" class="col-md-2 col-xs-6">NEO巧克力 </a>
+								<a href="#" class="col-md-2 col-xs-6">微信客服 </a>
+								<a href="#" class="col-md-2 col-xs-6">GEO新品促销</a>
+							</div>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<h4 class="col-xs-12">
+								分类名称： 	      
+							</h4>
+							<div class="col-xs-12" id="allFenlei">
+								<a href="#" class="col-md-2 col-xs-6">Neo </a>
+								<a href="#" class="col-md-2 col-xs-6">硅水凝胶系列</a>
+								<a href="#" class="col-md-2 col-xs-6">Dreamcon</a>
+								<a href="#" class="col-md-2 col-xs-6">Super size</a>
+								<a href="#" class="col-md-2 col-xs-6">Polytouch </a>
+								<a href="#" class="col-md-2 col-xs-6">Divabisou </a>
+								<a href="#" class="col-md-2 col-xs-6">其他品牌</a>
+							</div>
+						</div>
+						<div class="row">
+							<span class="col-xs-6 col-md-2">含水量： </span>
+							<a href="#" class="col-xs-6 col-md-1"> 	45% </a>
+						</div>
+						<div class="row">
+							<span class="col-xs-6 col-md-2">镜片厚度： </span>
+							<a href="#" class="col-xs-6 col-md-1"> 0.022mm</a>
+						</div>
+						<div class="row">
+							<span class="col-xs-6 col-md-2">抛弃类型：</span>
+							<a href="#" class="col-xs-6 col-md-1">年抛</a>
+						</div>
+					</div>
+					<div class="panel-footer clearfix">
+						<div class="pull-left">
+							<div class="input-group-btn pull-left">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">度数：请选择 <span class="caret"></span></button>
+						        <ul class="dropdown-menu" role="menu">
+						          	<li><a href="#">0-1000度</a></li>
+						          	<li><a href="#">0-800度</a></li>
+						        </ul>
+						    </div>
+						</div>
+						<div class="pull-left">
+							<div class="input-group-btn pull-left">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">直径：请选择 <span class="caret"></span></button>
+						        <ul class="dropdown-menu" role="menu">
+						          	<li><a href="#">14.0mm</a></li>
+						          	<li><a href="#">14.2mm</a></li>
+						          	<li><a href="#">14.5mm</a></li>
+						          	<li><a href="#">14.3mm</a></li>
+						        </ul>
+						    </div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="content">
+			<div class="row">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h5 class="panel-title">总共找到<span class="badge">4</span>个商品</h5>
+					</div>
+					<div class="panel-body">
+						<div class="row content-body"></div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				//  ajax  返回的数据格式 json数组————模拟数据
+				var data1 = [
+					{imgSrc: "http://www.cherry-mt.com/images/goods/20160411/1711f0448f590754.jpg",name: "独家Bebe硅水凝胶Mix browm(棕色）",shichangjia: 336,jiage:280},
+					{imgSrc: "http://www.cherry-mt.com/images/goods/20160411/1711f0448f590754.jpg",name: "独家Bebe硅水凝胶Mix browm(棕色）",shichangjia: 336,jiage:280},
+					{imgSrc: "http://www.cherry-mt.com/images/goods/20160411/1711f0448f590754.jpg",name: "独家Bebe硅水凝胶Mix browm(棕色）",shichangjia: 336,jiage:280},
+					{imgSrc: "http://www.cherry-mt.com/images/goods/20160411/1711f0448f590754.jpg",name: "独家Bebe硅水凝胶Mix browm(棕色）",shichangjia: 336,jiage:280},
+					{imgSrc: "http://www.cherry-mt.com/images/goods/20160411/1711f0448f590754.jpg",name: "独家Bebe硅水凝胶Mix browm(棕色）",shichangjia: 336,jiage:280}
+				];
+				
+				// 页面加载初始化方法
+				initLoad();
+				function initLoad () {
+					// 获取上一页面传递过来的参数
+					var parm = getParm();
+					// 根据参数查询  数据   没有参数查询  全部 （也可以设定一个默认值）
+					var data = searchFn(parm);
+					// 更新页面信息
+					searchHtml(data1);
+					// 绑定页面内的事件
+					initEvent();
+				}
+				
+				// 拿到从首页传过来的  参数    根据这个参数调用ajax  从后台  查询出  相应数据
+				function getParm(){
+					var parmeArr = document.location.search.slice(1).split("&");
+					var objParme = {};
+					for (var i = 0; i<parmeArr.length; i++) {
+						var parms = parmeArr[i].split("=");
+						objParme[parms[0]] = decodeURI(parms[1]);
+					}
+					if (!!objParme.shangpin) {
+						$("#changpin").text(objParme.shangpin).show();
+					} else{
+						$("#changpin").hide();
+					}
+					$("#fenlei").text(objParme.fenlei);
+					return objParme;
+				}
+				
+				//	查询方法 返回json数据
+				function searchFn (obj) {
+					/*for(var k in obj){
+						alert(k+'++'+obj[k])
+					}*/
+					var _data = {};
+					// obj 为查询条件
+					$.ajax({
+						type: "post",
+						data: obj,
+						url: "",	// 后台地址
+						async: true,
+						success: function ( data ) {
+							// 查询成功，返回的数据格式为
+							// [{产品名: xxx,市场价:xxx, 价格: xxx, 展示图片地址: xxx},...]
+							_data = data;
+						}
+					});
+					return _data;
+				}
+				
+					//  更新页面数据方法
+				function searchHtml(data){
+					var len = data.length;
+					var $content = $("#content");
+					var html = "";
+					for (var i = 0; i<len; i++) {
+						html += "<div class='col-sm-6 col-md-4 clearfix'>"+
+								"    <div class='thumbnail'>"+
+								"      	<img src='"+ data[i].imgSrc +"' alt='...'>"+
+								"      	<div class='caption text-center'>"+
+								"        	<h4><a href='#' class='shangpinName'>"+data[i].name+"</a></h4>"+
+								"        	<h3>￥"+data[i].jiage+".00 <span class='small'>市场价: ￥"+data[i].shichangjia+".00</span></h3>"+
+								"        	<p class='small'>节省：￥"+(data[i].shichangjia - data[i].jiage)+"00</p>"+
+								"      	</div>"+
+								"    </div>"+
+								"</div>";
+					}
+					$content.find(".badge").text(len);
+					$content.find(".content-body").append(html);
+				}
+				
+				// 点击热门搜索  拿到分类  调用ajax  更新数据
+				function initEvent () {
+					$("#hot-search>div>a").click(function () {
+						var _val = $(this).text();
+						searchFn({fenlei: _val});
+					});
+					$("#allFenlei>a").click(function () {
+						var _val = $(this).text();
+						searchFn({fenlei: _val});
+					});
+					$("#fenlei").click(function () {
+						var _val = $(this).text();
+						searchFn({fenlei: _val});
+					});
+					$("#changpin").click(function () {
+						var _val = $(this).text();
+						searchFn({changpin: _val});
+					});
+					$(".shangpinName").click(function () {
+						var _val = $(this).text();
+						alert(_val)
+						self.location.href = "xiangqing.html?name="+ _val;
+					});
+				}
+			
+			});
+		</script>
+	</body>
+</html>

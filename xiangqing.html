@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/util.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			body{font-family: "微软雅黑";font-size: 14px;color: #666;}
+			.rel{position: relative;top: 0;left: 0;}/*相对定位*/
+			.abs{position: absolute;top: 0;right: 0;}/*绝对定位*/
+			h3>span.small{text-decoration: line-through;}
+			.topBox{
+				position: fixed;right: 10px;bottom: 10px;
+				background: pink;width: 50px;height: 50px;
+				line-height: 50px;text-align: center;border-radius: 10px;
+				font-weight: 600;cursor: pointer;color: gray;
+				border: 1px solid pink;
+			}
+			.topBox:hover{color: black;background: whitesmoke;border: 1px solid black;}
+		</style>
+	</head>
+	<body>
+		<!--
+        	作者：念
+        	时间：2016-10-26
+        	描述：导航
+        -->
+        <div>
+			<div class="container-fluid nav navbar navbar-fixed-top navbar-inverse rel" role="navigation">
+				<div class="container ">
+					<div class="navbar-header navbar-left">
+						<button type="button" class="navbar-toggle nav-btn" data-toggle="collapse" data-target="#meitong-nav">
+							<span class="sr-only">美瞳</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand text-center" >美瞳网</a>
+					</div>
+					<div class="collapse navbar-collapse navbar-left" id="meitong-nav">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">首页</a></li>
+							<li><a href="index1.html#dianzhutuijian">店主推荐</a></li>
+							<li><a href="index1.html#xinpinshangshi">新品上市</a></li>
+							<li><a href="index1.html#huliye">护理液</a></li>
+							<li><a href="index1.html#rexiao">热销</a></li>
+							<li class="hidden-xs"><a href="#">官方微信</a></li>
+							<li class="hidden-xs"><a href="#">官方微博</a></li>
+						</ul>
+					</div>
+					<form class="navbar-form navbar-right" role="search">
+					  	<div class="input-group">
+					    	<input type="text" class="form-control" placeholder="Search">
+					    	<span class="input-group-addon glyphicon glyphicon-search rel pointer" ></span>
+					  	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<div class="dangqianweizhi">
+							<span class="glyphicon glyphicon-home"></span>
+							您当前的位置：
+							<a href="#">首页</a>
+							>>
+							<a href="#">Neo</a>
+							>>
+							<a href="#">女皇四色</a>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="clearfix">
+								<div class="col-md-4">
+									<div class="center-block thumbnail">
+										<img src="http://www.cherry-mt.com/images/goods/20160430/8ea9473930eb7d3d.jpg" class="center-block img-rounded"/>
+										<div class="caption">
+											<a href="bigImgShow.html">
+												<button  class="btn btn-info center-block">查看大图</button>	
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class=" col-md-8" id="parame">
+							        <h3 class="title col-md-12">Super size星光芭比</h3>
+							        <div>
+							        	<p class="col-md-4">商品编号：G572446661E2FD</p>
+							        	<p class="col-md-4">货&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：G572446661E2FD</p>
+							        	<p class="col-md-4">所得积分：160</p>
+							        	<p class="col-md-4">直径： 14.5mm </p>
+							        	<p class="col-md-4">着色直径： 15.5mm </p>
+							        	<p class="col-md-4">度数： 0-800度</p>
+							        	<p class="col-md-4">含水量： 42% </p>
+							        	<p class="col-md-4">抛弃类型： 年抛</p>
+							        	<p class="col-md-12">市场价： <span class="small" style="text-decoration: line-through;color: gray;">￥192.00</span></p>
+										<p class="col-md-12">销售价： <span style="font-size: 20px;color: #fe0c7c;font-weight: 900;">￥160.00</span></p>
+										<p class="col-md-12">节省： ￥32.00</p>
+							        </div>
+						     	</div>
+							</div>
+						</div>
+						<div class="row" id="show-content">
+							<div class="alert alert-info">商品详情</div>
+							<div class="col-xs-12 col-md-12">
+								<img src="http://www.cherry-mt.com/images//20160411/7b8554749efaae46.jpg" alt=""
+									width="100%"/>
+							</div>
+							<div class="col-xs-12 show-describe">
+								<p>硅水凝胶产品承诺：</p>
+								<p>1.我们销售的硅水凝胶产品100%与韩国门店一模一样！如有任何区别拆封也可退货！</p>
+								<p>2.硅胶镜片目前并没有权威的仪器来检测其镜片是否有硅胶成分在内，所以唯一验证真伪的方法就是参考韩国实体店！</p>
+								<p>3.从我们库房购买的硅胶产品可在韩国任何美瞳专柜验货，大家有朋友在韩国或者有熟悉的韩国代购的话，都可以让他们去专
+									柜验证是否有我们销售的此款产品</p>
+							</div>
+							<div class="col-xs-12 show-imgs">
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/ee97065aa8767241.png" width="100%"/>
+								</div>
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/44308f5b222ce2ce.jpg" width="100%"/>
+								</div>
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/0d1be4355dd69c44.png" width="100%"/>
+								</div>
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/c02aaff09dc9cae8.jpg" width="100%"/>
+								</div>
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/814404f14e1cad72.jpg" width="100%"/>
+								</div>
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/18db0145f35946c0.jpg" width="100%"/>
+								</div>
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/e0f1d6ac2bd4c2a2.jpg" width="100%"/>
+								</div>
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/965d97a2b4a389aa.jpg" width="100%"/>
+								</div>
+								<div class="thumbnail">
+									<img src="http://www.cherry-mt.com/images//20160411/bdebeb4bf50e1879.jpg" width="100%"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="topBox">
+			TOP
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				goTop($(window), $(".topBox"), 500, 15);
+				
+				init();
+				function init () {
+					var _parme = getParm();
+					var _data = searchData(_parme);
+					updata(_data);
+				}
+				
+				function searchData (obj) {
+					var _data = {
+	        			fenlei:"Divabisou",
+						// 产品名
+						name: "想你",
+						// 产品描述
+						describe:["DivaBisou源自法语，女王之吻的意思！",
+								"代表着女性的独立、自信及对美的追求！",
+								"作为美瞳品牌新起之秀，更是灌注了创始人最真挚的希望！",
+								"希望每一个带上divabisou美瞳的姑娘都更加的自信美丽，拥有女王般的人生！"],
+						imgs: ["ee97065aa8767241.png","44308f5b222ce2ce.jpg","0d1be4355dd69c44.png",
+							"c02aaff09dc9cae8.jpg","814404f14e1cad72.jpg","18db0145f35946c0.jpg"
+							,"e0f1d6ac2bd4c2a2.jpg","965d97a2b4a389aa.jpg","bdebeb4bf50e1879.jpg"],
+						// 产品参数
+						parameters:{
+							deg:"1000",			// 度数
+							diameter: "14.2",		// 直径
+							waterContent: "38%",	// 含水量
+							thickness:" 0.028mm",	// 厚度
+							type:"年抛"				// 抛弃类型
+	    				}
+					}
+					return _data;
+        		}
+				
+				function updata (data) {
+					var dangqianweizhi = $(".dangqianweizhi").find("a");
+					dangqianweizhi.eq(1).text(data.fenlei);
+					dangqianweizhi.eq(2).text(data.name);
+					
+					var headHtml =  "<h3 class='title col-md-12 alert alert-info'>"+ data.name +"</h3>"+
+						        "<div>"+
+						        "	<p class='col-md-4'>直径： "+ data.parameters.diameter +"mm </p>"+
+						        "	<p class='col-md-4'>着色直径： 15.5mm </p>"+
+						        "	<p class='col-md-4'>度数： 0-"+ data.parameters.deg +"度</p>"+
+						        "	<p class='col-md-4'>含水量： "+ data.parameters.waterContent +"% </p>"+
+						        "	<p class='col-md-4'>抛弃类型： "+ data.parameters.type +"</p>"+
+						        "	<p class='col-md-12'>市场价： <span class='small' style='text-decoration: line-through;color: gray;'>￥192.00</span></p>"+
+								"	<p class='col-md-12'>销售价： <span style='font-size: 20px;color: #fe0c7c;font-weight: 900;'>￥160.00</span></p>"+
+								"	<p class='col-md-12'>节省： ￥32.00</p>"+
+						        "</div>";
+					$("#parame").html(headHtml);
+					
+					var describeHtml = "";
+					for (var i = 0; i<data.describe.length; i++) {
+						describeHtml += "<p>"+ data.describe[i] +"</p>";
+					}
+					$("#show-content").children(".show-describe").html(describeHtml);
+					
+					var imgsHtml = "";
+					for (var j = 0; j<data.imgs.length; j++) {
+						imgsHtml += "<div class='thumbnail'>"+
+									"	<img src='http://www.cherry-mt.com/images//20160411/"+ data.imgs[j] +"' width='100%'/>"+
+									"</div>";
+					}
+					$("#show-content").children(".show-imgs").html(imgsHtml);
+				}
+				
+				// 拿到从首页传过来的  参数    根据这个参数调用ajax  从后台  查询出  相应数据
+				function getParm(){
+					var parmeArr = document.location.search.slice(1).split("&");
+					var objParme = {};
+					for (var i = 0; i<parmeArr.length; i++) {
+						var parms = parmeArr[i].split("=");
+						objParme[parms[0]] = decodeURI(parms[1]);
+					}
+					return objParme;
+				}
+			});
+		</script>
+	</body>
+</html>

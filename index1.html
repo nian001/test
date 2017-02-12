@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			/*通用样式 开始*/
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			body{font-family: "微软雅黑";font-size: 14px;color: #666;}
+			.rel{position: relative;top: 0;left: 0;}/*相对定位*/
+			.abs{position: absolute;top: 0;right: 0;}/*绝对定位*/
+			.padding-none{padding: 0;}
+			/*通用样式 结束*/
+			
+			/* 全部商品样式 开始 */
+			/*字体颜色*/
+			.menu a{color: darkgray;}
+			.menu a:hover{color: black;text-decoration: none;}
+			.menu>h4>a{color: black;}
+			.menu>h4>a:hover{color: gray;}
+			/*左边粉色边框*/
+			.menu{border:1px solid darkgrey;position: static;cursor: pointer;}
+			.menu:hover{border-left:4px solid darkgrey;}
+			/*子菜单列表*/
+			.menu .menu-list{right: -280px;top: 60px;width: 280px;display: none;z-index: 1001;}
+			.menu .menu-list li a:hover{color: black;}
+			.menu .menu-list li ul{margin-bottom: 0;}
+			.menu .menu-list li a{padding-top: 10px;}
+			.menu:hover .menu-list{display: block;}
+			/* 全部商品样式 结束 */
+			
+			/*店主推荐 样式*/
+			.recommend .caption h4{color: #FE0C7C;}
+			
+			/* 热销排行 样式 */
+			.hot .panel-body ul li span{margin:12px 0 0 10px;font-size: 40px;}
+			.hot .panel-body ul li div.hot-text{margin-top: 20px;}
+			
+			/* 全部商品（小屏幕） */
+			#all .panel-title a{background: #101010;color: white;}
+			#all .panel-title a:hover{background: gray;color: black;}
+			
+			/* 轮播图 开始 */
+		 	#banner .banner-btn-box .btn-list>li:first-child{background: black;}
+		 	#banner .banner-btn-box .nextAndPre{top: 50%;margin-top: -25px;z-index: 1000;}
+		 	#banner .banner-btn-box .nextAndPre-xs a{padding: 10px 4px;font-size: 40px;background: gray;}
+		 	#banner .banner-btn-box .nextAndPre-lg a{padding: 4px 0px;font-size: 20px;background: gray;}
+			#banner img.rel-img{position: relative;opacity: 1;}
+			#banner img.abs-img{position: absolute;opacity: 0;}
+			#banner img{top: 0;left: 0;}
+			#banner .banner-btn-box .btn-list{
+				position: absolute;
+				bottom: 0px;
+				left: 50%;
+				margin-left: -75px;
+				z-index: 1000;
+			}
+		 	#banner .banner-btn-box .btn-list>li{
+		 		float: left;
+		 		margin-left: 20px;
+		 		width: 30px;
+		 		height: 10px;
+		 		background: gray;
+		 		border-radius: 5px;
+		 		cursor: pointer;
+		 	}
+			/* 轮播图 结束 */
+		</style>
+	</head>
+	<body>
+		<!--
+        	作者：念
+        	时间：2016-10-26
+        	描述：导航
+        -->
+        <div class="">
+			<div class="container-fluid nav navbar navbar-fixed-top navbar-inverse rel" role="navigation">
+				<div class="container ">
+					<div class="navbar-header navbar-left">
+						<button type="button" class="navbar-toggle nav-btn" data-toggle="collapse" data-target="#meitong-nav">
+							<span class="sr-only">美瞳</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="#" class="navbar-brand text-center" >美瞳网</a>
+					</div>
+					<div class="collapse navbar-collapse navbar-left" id="meitong-nav">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">首页</a></li>
+							<li><a href="#dianzhutuijian">店主推荐</a></li>
+							<li><a href="#xinpinshangshi">新品上市</a></li>
+							<li><a href="#huliye">护理液</a></li>
+							<li><a href="#rexiao">热销</a></li>
+							<li><a href="#">官方微信</a></li>
+							<li><a href="#">官方微博</a></li>
+						</ul>
+					</div>
+					<form class="navbar-form navbar-right" role="search">
+					  	<div class="input-group">
+					    	<input type="text" class="form-control" placeholder="Search">
+					    	<span class="input-group-addon glyphicon glyphicon-search rel pointer" ></span>
+					  	</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--
+        	作者：念
+        	时间：2016-10-26
+        	描述：全部菜单与轮播图
+        -->
+		<div class="container">
+			<div class="row">
+				<!--
+                	描述：轮播图
+                -->
+				<div class="col-md-10 col-xs-12 padding-none pull-right  rel" id="banner">
+					<!--图片 -->
+					<div class="rel">
+						<img class="pull-left rel-img" src="http://www.cherry-mt.com/images//20160416/cd31b87b6164bf5f.jpg" width="100%"/>
+						<img class="pull-left abs-img" src="http://cy-girls.com/images//20160409/b7c1d795b0f0762e.jpg" width="100%"/>
+						<img class="pull-left abs-img" src="http://cy-girls.com/images//20160317/43c8b23a650a7ce7.jpg" width="100%"/>
+					</div>
+					<!--按纽 -->
+					<div class="banner-btn-box">
+						<div class="nextAndPre nextAndPre-xs col-xs-12 abs hidden-xs">
+							<a href="javascript:void(0);" class="btn btn-default  pull-left" id="pre-xs">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+							</a>
+							<a href="javascript:void(0);" class="btn btn-default  pull-right" id="next-xs">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</a>
+						</div>
+						<div class="nextAndPre nextAndPre-lg col-xs-12 abs visible-xs">
+							<a href="javascript:void(0);" class="btn btn-default  pull-left" id="pre-lg">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+							</a>
+							<a href="javascript:void(0);" class="btn btn-default  pull-right" id="next-lg">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+							</a>
+						</div>
+						<ul class="btn-list">
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+				
+				<!--
+                	描述：全部商品列表——大屏（电脑）
+                -->
+              
+				<div class="list-group col-md-2 padding-none pull-left  hidden-xs hidden-sm rel" id="">
+					<div class="list-group-item bg-info disabled">
+						<h4>全部商品分类</h4>
+					</div>
+					<!--one-->
+					<div class="list-group-item  menu menu1">
+						<h4 class="list-group-item-heading "><a href="#">Divabisou</a></h4>
+						<a href="#">想你</a> 
+						<a href="#">奶油三色</a>
+						<ul class="list-group abs menu-list">
+							<li class="list-group-item disabled">Divabisou</li>
+							<li class="list-group-item "><a href="#">想你</a></li>
+							<li class="list-group-item "><a href="#">奶油三色</a></li>
+							<li class="list-group-item "><a href="#">初恋三色</a></li>
+							<li class="list-group-item "><a href="#">花妍</a></li>
+							<li class="list-group-item "><a href="#">浅棕</a></li>
+							<li class="list-group-item "><a href="#">小巧环</a></li>
+							<li class="list-group-item "><a href="#">水润棕</a></li>
+							<li class="list-group-item disabled">相关品牌</li>
+							<li class="list-group-item "><a href="#">Divabisou(4)</a></li>
+						</ul>
+					</div>
+					<!--two-->
+					<div class="list-group-item  menu menu1">
+						<h4 class="list-group-item-heading ">硅水凝胶系列</h4>
+						<a href="#">bebe shine</a> 
+						<a href="#">SIO硅水凝胶</a>
+						<ul class="list-group abs menu-list">
+							<li class="list-group-item disabled">硅水凝胶系列</li>
+							<li class="list-group-item "><a href="#">bebe shine</a></li>
+							<li class="list-group-item "><a href="#">SIO硅水凝胶</a></li>
+							<li class="list-group-item "><a href="#">VON透明片</a></li>
+							<li class="list-group-item "><a href="#">VON顶级</a></li>
+							<li class="list-group-item "><a href="#">Bebe angel</a></li>
+							<li class="list-group-item "><a href="#">Bebe beauty</a></li>
+							<li class="list-group-item "><a href="#">Bebe cool</a></li>
+							<li class="list-group-item "><a href="#">Bebe magic</a></li>
+							<li class="list-group-item "><a href="#">Bebe candy</a></li>
+							<li class="list-group-item "><a href="#">Bebe mix</a></li>
+							<li class="list-group-item "><a href="#">Bebe sexy</a></li>
+							<li class="list-group-item "><a href="#">SEENCON NATURAL</a></li>
+							<li class="list-group-item "><a href="#">Von hyal</a></li>
+						</ul>
+					</div>
+					<!--three-->
+					<div class="list-group-item  menu menu1">
+						<h4 class="list-group-item-heading ">Dreamcon</h4>
+						<a href="#">雪环(粉/棕/灰)</a> 
+						<a href="#">公主系列</a>
+						<ul class="list-group abs menu-list">
+							<li class="list-group-item disabled">Dreamcon</li>
+							<li class="list-group-item "><a href="#">雪环(粉/棕/灰)</a></li>
+							<li class="list-group-item "><a href="#">公主系列</a></li>
+							<li class="list-group-item "><a href="#">钻石星光</a></li>
+							<li class="list-group-item "><a href="#">柠檬巧克力</a></li>
+							<li class="list-group-item "><a href="#">iic</a></li>
+							<li class="list-group-item "><a href="#">韩视HD</a></li>
+							<li class="list-group-item "><a href="#">韩视EDGE</a></li>
+							<li class="list-group-item "><a href="#">星耀金</a></li>
+							<li class="list-group-item "><a href="#">琉璃浅棕</a></li>
+							<li class="list-group-item "><a href="#">目妍洛夫可可</a></li>
+							<li class="list-group-item "><a href="#">目妍甜心系列</a></li>
+							<li class="list-group-item "><a href="#">目妍慕斯系列</a></li>
+							<li class="list-group-item "><a href="#">目妍娃娃黑</a></li>
+							<li class="list-group-item "><a href="#">目妍摩卡咖啡</a></li>
+							<li class="list-group-item "><a href="#">目妍浪漫金橘棕</a></li>
+							<li class="list-group-item "><a href="#">目妍SEXY黑/巧克力</a></li>
+							<li class="list-group-item "><a href="#">目妍crown皇冠棕</a></li>
+							<li class="list-group-item "><a href="#">目妍tiffany银灰</a></li>
+							<li class="list-group-item "><a href="#">目妍cutie精灵灰/棕</a></li>
+							<li class="list-group-item "><a href="#">目妍星愿灰/棕</a></li>
+							<li class="list-group-item "><a href="#">目妍萌小棕/萌小灰</a></li>
+							<li class="list-group-item "><a href="#">目妍水晶金彩棕/灰</a></li>
+							<li class="list-group-item "><a href="#">目妍妖精小瞳</a></li>
+							<li class="list-group-item "><a href="#">目妍酒心芭比棕/灰</a></li>
+							<li class="list-group-item "><a href="#">目妍心雅巧克力/心雅棕</a></li>
+							<li class="list-group-item "><a href="#">FRESH清透粉</a></li>
+							<li class="list-group-item "><a href="#">棒棒糖（日抛）</a></li>
+							<li class="list-group-item "><a href="#">千金小姐</a></li>
+							<li class="list-group-item "><a href="#">colorpia混血三色系列</a></li>
+							<li class="list-group-item "><a href="#">Hitea下午茶半年抛</a></li>
+							<li class="list-group-item "><a href="#">优质三色</a></li>
+							<li class="list-group-item "><a href="#">糖果系列</a></li>
+							<li class="list-group-item "><a href="#">恶魔系列</a></li>
+							<li class="list-group-item "><a href="#">水盈黑</a></li>
+							<li class="list-group-item "><a href="#">樱花巧克力</a></li>
+							<li class="list-group-item "><a href="#">抹茶巧克力</a></li>
+							<li class="list-group-item "><a href="#">卡琪巧克力</a></li>
+							<li class="list-group-item "><a href="#">极致灰棕</a></li>
+							
+						</ul>
+					</div>
+					<!--four-->
+					<div class="list-group-item  menu menu1">
+						<h4 class="list-group-item-heading ">Super size</h4>
+						<a href="#">玫瑰系列</a> 
+						<a href="#">甜心棒棒糖</a>
+						<ul class="list-group abs menu-list">
+							<li class="list-group-item disabled">Super size</li>
+							<li class="list-group-item "><a href="#">玫瑰系列</a></li>
+							<li class="list-group-item "><a href="#">甜心棒棒糖</a></li>
+							<li class="list-group-item "><a href="#">荧彩三色</a></li>
+							<li class="list-group-item "><a href="#">粉媚天使</a></li>
+							<li class="list-group-item "><a href="#">曲奇系列</a></li>
+							<li class="list-group-item "><a href="#">高端金莎系列</a></li>
+							<li class="list-group-item "><a href="#">典雅系列</a></li>
+							<li class="list-group-item "><a href="#">大黑环</a></li>
+							<li class="list-group-item "><a href="#">星光奶油</a></li>
+							<li class="list-group-item "><a href="#">泪花朱古力</a></li>
+							<li class="list-group-item "><a href="#">彩虹四色</a></li>
+							<li class="list-group-item "><a href="#">两周年纪念款秋叶</a></li>
+							<li class="list-group-item "><a href="#">三周年纪念款蜂蜜棕</a></li>
+							<li class="list-group-item "><a href="#">欧美系列</a></li>
+							<li class="list-group-item "><a href="#">初见系列</a></li>
+							<li class="list-group-item "><a href="#">星光芭比</a></li>
+							<li class="list-group-item "><a href="#">珍珠系列</a></li>
+							<li class="list-group-item "><a href="#">珍妮三色</a></li>
+							<li class="list-group-item "><a href="#">流星系列</a></li>
+							<li class="list-group-item "><a href="#">莹润朱古力</a></li>
+							<li class="list-group-item "><a href="#">松露朱古力</a></li>
+							<li class="list-group-item "><a href="#">一周年纪念款雪豹</a></li>
+							<li class="list-group-item disabled">相关品牌</a></li>
+							<li class="list-group-item "><a href="#">super size(14)</a></li>
+						</ul>
+					</div>
+					<!--five-->
+					<div class="list-group-item  menu menu1">
+						<h4 class="list-group-item-heading ">Polytouch</h4>
+						<a href="#">Polytouch cb</a> 
+						<a href="#">无感灰色</a>
+						<ul class="list-group abs menu-list">
+							<li class="list-group-item disabled">Polytouch</li>
+							<li class="list-group-item "><a href="#">Polytouch cb</a></li>
+							<li class="list-group-item "><a href="#">Polytouch ce</a></li>
+							<li class="list-group-item "><a href="#">Polytouch pm</a></li>
+							<li class="list-group-item "><a href="#">Polytouch s03</a></li>
+							<li class="list-group-item "><a href="#">Polytouch oy</a></li>
+							<li class="list-group-item "><a href="#">Polytouch 无感</a></li>
+							<li class="list-group-item "><a href="#">无感灰色</a></li>
+							<li class="list-group-item "><a href="#">焦糖蜜棕</a></li>
+							<li class="list-group-item "><a href="#">焦糖朱古力</a></li>
+							<li class="list-group-item "><a href="#">双周抛六片装（芭比棕）</a></li>
+							<li class="list-group-item "><a href="#">双周抛六片装（混血三色）</a></li>
+						</ul>
+					</div>
+					<!--six-->
+					<div class="list-group-item  menu menu1">
+						<h4 class="list-group-item-heading ">Neo</h4>
+						<a href="#">女皇四色</a> 
+						<a href="#">巨目一代</a>
+						<ul class="list-group abs menu-list">
+							<li class="list-group-item disabled">Neo</li>
+							<li class="list-group-item "><a href="#">女皇四色</li>
+							<li class="list-group-item "><a href="#">巨目一代</li>
+							<li class="list-group-item "><a href="#">巧克力三代</li>
+							<li class="list-group-item "><a href="#">幸运四色</li>
+							<li class="list-group-item "><a href="#">小棕环</li>
+							<li class="list-group-item "><a href="#">小灰环</li>
+							<li class="list-group-item "><a href="#">小黑环</li>
+							<li class="list-group-item "><a href="#">巧克力二代</li>
+							<li class="list-group-item "><a href="#">巧克力一代</li>
+							<li class="list-group-item "><a href="#">独家款式-清新双色系列</li>
+							<li class="list-group-item "><a href="#">深邃系列</li>
+							<li class="list-group-item "><a href="#">冰凌系列</li>
+							<li class="list-group-item "><a href="#">海葵系列</li>
+							<li class="list-group-item "><a href="#">星萌系列</li>
+							<li class="list-group-item "><a href="#">环彩系列</li>
+							<li class="list-group-item "><a href="#">天使三色</li>
+							<li class="list-group-item "><a href="#">巧克力四代</li>
+							<li class="list-group-item "><a href="#">钻石系列</li>
+							<li class="list-group-item "><a href="#">八芒星</li>
+							<li class="list-group-item "><a href="#">暮色</li>
+							<li class="list-group-item "><a href="#">舒娜系列</li>
+							<li class="list-group-item "><a href="#">蕾丝系列</li>
+							<li class="list-group-item "><a href="#">心语系列</li>
+							<li class="list-group-item "><a href="#">雪花黑</li>
+							<li class="list-group-item "><a href="#">小蓝环</li>
+							<li class="list-group-item "><a href="#">雪花黑二代</li>
+							<li class="list-group-item "><a href="#">水光系列</li>
+						</ul>
+					</div>
+					<!--seven-->
+					<!---->
+					<div class="list-group-item  menu" id="other">
+						<h4 class="list-group-item-heading ">其他品牌</h4>
+						<a href="#">EOS</a> 
+						<a href="#">Seeencon</a>
+						<a href="#">Bescon</a>
+						<ul class="list-group abs menu-list">
+							<li class="list-group-item disabled">其他品牌</li>
+							<li class="list-group-item clearfix padding-none">
+								<span class="col-xs-5 text-center">EOS</span>		
+								<ul class="list-group col-md-7 padding-none">
+									<li class="col-xs-12 list-group-item"><a href="#">极致自然</a></li>
+									<li class="col-xs-12 list-group-item"><a href="#">琪格曲奇</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">鹿眼</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">黛西系列（DAISY）</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">冰花系列（ICE）</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">暗冰系列（DARK ICE）</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">奶茶巧克力</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">深咖巧克力</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">珍珠黑</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">泪花系列</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">吸血鬼之瞳</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">Lucky三色系列</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">Hoeny三色系列</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">墨忆四色系列</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">荧泪三色系列</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">甜梨布丁/蓝莓布丁</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">小仙女</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">冰润</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">粉彩四色</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">可人系列</a></li>
+								</ul>
+							</li>
+    						<li class="list-group-item clearfix padding-none">
+								<span class="col-xs-5 text-center">Seeencon</span>	
+								<ul class="list-group col-md-7 padding-none">
+									<li class="col-xs-12 list-group-item"><a href="#">world极光系列</a></li>
+									<li class="col-xs-12 list-group-item"><a href="#">cream奶油三色</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">NATURAL硅水凝胶系列</a></li>
+								</ul>
+							</li>
+    						<li class="list-group-item clearfix padding-none">
+								<span class="col-xs-5 text-center">Bescon</span>		
+								<ul class="list-group col-md-7 padding-none">
+									<li class="col-xs-12 list-group-item"><a href="#">润彩</a></li>
+								</ul>
+							</li>
+        					<li class="list-group-item clearfix padding-none">
+								<span class="col-xs-5 text-center">TORIC LEN</span>		
+								<ul class="list-group col-md-7 padding-none">
+									<li class="col-xs-12 list-group-item"><a href="#">星光巧克力</a></li>
+									<li class="col-xs-12 list-group-item"><a href="#">橡木巧克力</a></li>
+								</ul>
+							</li>
+        					<li class="list-group-item clearfix padding-none">
+								<span class="col-xs-5 text-center">Dueba</span>	
+								<ul class="list-group col-md-7 padding-none">
+									<li class="col-xs-12 list-group-item"><a href="#">软糖</a></li>
+									<li class="col-xs-12 list-group-item"><a href="#">babie 混血</a></li>
+									<li class="col-xs-12 list-group-item"><a href="#">橘彩星光</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">自然</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">洛可可</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">甜杏</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">玻璃球</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">玻璃球二代</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">sunflower</a></li>
+								    <li class="col-xs-12 list-group-item"><a href="#">jazz flower</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">橄榄棕</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">酒心巧克力</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">栗子褐</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">星芒巧克力</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">花耀褐/黑</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">布朗褐/黑</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">水润黑环</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">花颜褐</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">慕斯</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">氧气巧克力</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">清萌</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">牛奶巧克力</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">浓情巧克力</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">drem color三色</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">花漾四色</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">萌润黑巧克力</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">古诺四色</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">月光甜甜圈</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">晨曦四色</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">水晶咖啡</a></li>
+							        <li class="col-xs-12 list-group-item"><a href="#">水晶咖啡</a></li>
+								</ul>
+							</li>
+					</div>
+					
+				</div>
+			</div>
+			<!-- 描述：全部商品列表——小屏（手机）  -->
+			<div class="row  visible-xs visible-sm">
+				<div class="panel-group" id="all">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">全部商品</h4>
+						</div>
+					</div>
+					<!---->
+					<div class="panel panel-default">
+						<div class="panel-heading padding-none">
+							<h4 class="panel-title">
+								<a href="#allOne" class="btn btn-block min-title" data-toggle="collapse" data-parent="#all">Neo</a>
+							</h4>
+						</div>
+						<div class="panel-collapse collapse min-menu" id="allOne">
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item col-xs-6"><a href="#">女皇四色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">巨目一代</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">巧克力三代</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">幸运四色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">小棕环</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">小灰环</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">小黑环</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">巧克力二代</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">巧克力一代</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">深邃系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">冰凌系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">海葵系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">星萌系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">环彩系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">天使三色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">巧克力四代</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">钻石系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">八芒星</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">暮色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">舒娜系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">蕾丝系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">心语系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">雪花黑</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">小蓝环</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">雪花黑二代</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">水光系列</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">独家款式-清新双色系列</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!---->
+					<div class="panel panel-default">
+						<div class="panel-heading padding-none">
+							<h4 class="panel-title">
+								<a href="#allTwo" class="btn  btn-block min-title" data-toggle="collapse" data-parent="#all">
+									硅水凝胶系列
+								</a>
+							</h4>
+						</div>
+						<div class="panel-collapse collapse min-menu" id="allTwo">
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item col-xs-6"><a href="#">bebe shine</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">SIO硅水凝胶</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">VON透明片</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">VON顶级</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Bebe angel</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Bebe beauty</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Bebe cool</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Bebe magic</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Bebe candy</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Bebe mix</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Bebe sexy</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Von hyal</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">SEENCON NATURAL</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!---->
+					<div class="panel panel-default">
+						<div class="panel-heading padding-none">
+							<h4 class="panel-title">
+								<a href="#allThree" class="btn  btn-block min-title" data-toggle="collapse" data-parent="#all">
+									Dreamcon
+								</a>
+							</h4>
+						</div>
+						<div class="panel-collapse collapse min-menu" id="allThree">
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item col-xs-6"><a href="#">雪环(粉/棕/灰)</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">公主系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">钻石星光</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">柠檬巧克力</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">iic</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">韩视HD</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">韩视EDGE</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">星耀金</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">琉璃浅棕</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">FRESH清透粉</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">千金小姐</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">优质三色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">糖果系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">恶魔系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">水盈黑</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">樱花巧克力</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">抹茶巧克力</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">卡琪巧克力</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">极致灰棕</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">目妍洛夫可可</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">目妍甜心系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">目妍慕斯系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">目妍娃娃黑</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">目妍摩卡咖啡</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍浪漫金橘棕</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍SEXY黑/巧克力</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍crown皇冠棕</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍tiffany银灰</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍cutie精灵灰/棕</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍星愿灰/棕</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍萌小棕/萌小灰</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍水晶金彩棕/灰</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍妖精小瞳</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍酒心芭比棕/灰</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">目妍心雅巧克力/心雅棕</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">colorpia混血三色系列</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">Hitea下午茶半年抛</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">棒棒糖（日抛）</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!---->
+					<div class="panel panel-default">
+						<div class="panel-heading padding-none">
+							<h4 class="panel-title">
+								<a href="#allFour" class="btn  btn-block min-title" data-toggle="collapse" data-parent="#all">
+									Super size
+								</a>
+							</h4>
+						</div>
+						<div class="panel-collapse collapse min-menu" id="allFour">
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item col-xs-6"><a href="#">玫瑰系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">甜心棒棒糖</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">荧彩三色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">粉媚天使</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">曲奇系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">高端金莎系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">典雅系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">大黑环</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">星光奶油</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">泪花朱古力</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">彩虹四色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">欧美系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">初见系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">星光芭比</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">珍珠系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">珍妮三色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">流星系列</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">莹润朱古力</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">松露朱古力</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">两周年纪念款秋叶</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">三周年纪念款蜂蜜棕</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">一周年纪念款雪豹</a></li>
+									<li class="list-group-item col-xs-12 disabled">相关品牌</li>
+									<li class="list-group-item col-xs-12"><a href="#">super size(14)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!---->
+					<div class="panel panel-default">
+						<div class="panel-heading padding-none">
+							<h4 class="panel-title">
+								<a href="#allFive" class="btn  btn-block min-title" data-toggle="collapse" data-parent="#all">
+									Polytouch
+								</a>
+							</h4>
+						</div>
+						<div class="panel-collapse collapse min-menu" id="allFive">
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item col-xs-6"><a href="#">Polytouch cb</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Polytouch ce</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Polytouch pm</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Polytouch s03</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">Polytouch oy</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">无感灰色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">焦糖蜜棕</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">焦糖朱古力</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">Polytouch 无感</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">双周抛六片装（芭比棕）</a></li>
+									<li class="list-group-item col-xs-12"><a href="#">双周抛六片装（混血三色）</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!---->
+					<div class="panel panel-default">
+						<div class="panel-heading padding-none">
+							<h4 class="panel-title">
+								<a href="#allSix" class="btn  btn-block min-title" data-toggle="collapse" data-parent="#all">
+									Divabisou
+								</a>
+							</h4>
+						</div>
+						<div class="panel-collapse collapse min-menu" id="allSix">
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item col-xs-6"><a href="#">想你</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">奶油三色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">初恋三色</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">花妍</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">浅棕</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">小巧环</a></li>
+									<li class="list-group-item col-xs-6"><a href="#">水润棕</a></li>
+									<li class="list-group-item col-xs-12 disabled">相关品牌</li>
+									<li class="list-group-item col-xs-6"><a href="#">Divabisou(4)</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+        	作者：念
+        	时间：2016-10-26
+        	描述：内容区
+        -->
+		<div class="container">
+			<div class="row ">
+				<!--
+                	描述：店主推荐
+                -->
+				<div class="panel panel-default recommend">
+					<a name="dianzhutuijian"></a>
+					<div class="panel-heading">
+						<h4 class="panel-title">店主推荐<a href="#" class="btn btn-link pull-right">更多...</a></h4>
+					</div>
+					<div class="panel-body">
+						<div class="col-sm-6 col-md-3 padding-none">
+					         <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/themes/meitong/images/m1.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4 class="">什么值得买</h4>
+					                <p>传说中的历史最低价，单副低至2折起抢</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 padding-none">
+					         <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/themes/meitong/images/m2.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4 class="">上班族戴什么</h4>
+					                <p>自然无做作 舒适无干涉才是全天候</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 padding-none">
+					         <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/themes/meitong/images/m3.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4 class="">自拍神器</h4>
+					                <p>最适合自拍的美瞳神器</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/themes/meitong/images/m4.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4 class="">会员等级换折扣</h4>
+					                <p>注册就有充满惊喜的体验</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					         <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images//20160424/f0c3661d744f9035.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <p>最受欢迎的美瞳品牌</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images//20160424/64746f2ce9e8b3ca.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <p>连续7年蝉联销量冠军宝座 </p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images//20160424/867447b9a6ff46ba.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <p>学生党购买居多</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images//20160424/bf8b9fed38d756b5.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <p>舒适保湿美瞳首选 </p>
+					            </div>
+					         </div>
+					    </div>
+					</div>
+				</div>
+				<!--
+                	描述：新品上市
+                -->
+				<div class="panel panel-default">
+					<a name="xinpinshangshi"></a>
+					<div class="panel-heading">
+						<h4 class="panel-title">新品上市<a href="#" class="btn btn-link pull-right">更多...</a></h4>
+					</div>
+					<!--<div class="thumbnail">
+			            <img src="http://image.meimumeijia.com/anyeye/www/index/lenses-new-item.jpg" 
+			             alt="通用的占位符缩略图">
+			        </div>-->
+					<div class="panel-body">
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					        	<div class="caption">
+					                <h4 class="">NEO小黑环</h4>
+					            </div>
+					             <img src="http://www.cherry-mt.com/images//20160424/4617c7c4ab1a312b.jpg" 
+					             alt="通用的占位符缩略图">
+					              
+					         </div>
+					    </div>
+					     <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					        	<div class="caption">
+					                <h4 class="">热卖星环</h4>
+					            </div>
+					             <img src="http://www.cherry-mt.com/images//20160424/c081802d78433d3d.jpg" 
+					             alt="通用的占位符缩略图">
+					              
+					         </div>
+					    </div>
+					     <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					        	<div class="caption">
+					                <h4 class="">LADY LUCK冰凌系列</h4>
+					            </div>
+					             <img src="http://www.cherry-mt.com/images//20160424/32bb8f8a9a9096c2.jpg" 
+					             alt="通用的占位符缩略图">
+					              
+					         </div>
+					    </div>
+					     <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					        	<div class="caption">
+					                <h4 class="">EOS鹿眼</h4>
+					            </div>
+					             <img src="http://www.cherry-mt.com/images//20160424/f54e1e8bdd02d0f5.jpg" 
+					             alt="通用的占位符缩略图">
+					              
+					         </div>
+					    </div>
+					     <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					        	<div class="caption">
+					                <h4 class="">DREAMCON星耀金 </h4>
+					            </div>
+					             <img src="http://www.cherry-mt.com/images//20160428/dc9fdcf7732bbd61.png" 
+					             alt="通用的占位符缩略图" width="172">
+					              
+					         </div>
+					    </div>
+					</div>
+				</div>
+				<!--
+                	描述：护理液、热销排行
+                -->
+				<div class="panel panel-default hot">
+					<a name="huliye"></a>
+					<div class="col-sm-12 col-md-12 col-xs-12 padding-none">
+				         <div class="thumbnail">
+				             <img src="http://image.meimumeijia.com/anyeye/www/index/lenses-makeup-item.jpg" 
+				             alt="通用的占位符缩略图">
+				         </div>
+				    </div>
+					<div class="panel-body text-center">
+					    <div class="col-sm-5 col-md-3 col-xs-12 padding-none pull-right">
+							<ul class="list-group">
+								<li class="list-group-item disabled">HOT热销商品排行</li>
+								<li class="list-group-item clearfix padding-none">
+									<span class="pull-left text-center">1</span>
+									<div class="pull-right">
+										<img src="http://www.cherry-mt.com/images/goods/20160510/d3fc6b523581a4a8.jpg" 
+											width="60" height="80"/>	
+									</div>
+									<div class="pull-right hot-text">
+										<p>TORIC LENS橡木巧克力</p>
+										<p>￥180.00</p>
+									</div>
+								</li>
+								<li class="list-group-item clearfix padding-none">
+									<span class="pull-left text-center">2</span>
+									<div class="pull-right">
+										<img src="http://www.cherry-mt.com/images/goods/20160510/386712e6a715b6fc.jpg" 
+											width="60" height="80"/>	
+									</div>
+									<div class="pull-right hot-text">
+										<p>TORIC LENS星光巧克</p>
+										<p>￥180.00</p>
+									</div>
+								</li>
+								<li class="list-group-item clearfix padding-none">
+									<span class="pull-left text-center">3</span>
+									<div class="pull-right">
+										<img src="http://www.cherry-mt.com/images/goods/20160510/386712e6a715b6fc.jpg" 
+											width="60" height="80"/>	
+									</div>
+									<div class="pull-right hot-text">
+										<p>TORIC LENS星光巧克</p>
+										<p>￥180.00</p>
+									</div>
+								</li>
+								<li class="list-group-item clearfix padding-none">
+									<span class="pull-left text-center">4</span>
+									<div class="pull-right">
+										<img src="http://www.cherry-mt.com/images/goods/20160510/386712e6a715b6fc.jpg" 
+											width="60" height="80"/>	
+									</div>
+									<div class="pull-right hot-text">
+										<p>TORIC LENS星光巧克</p>
+										<p>￥180.00</p>
+									</div>
+								</li>
+								<li class="list-group-item clearfix padding-none">
+									<span class="pull-left text-center">5</span>
+									<div class="pull-right">
+										<img src="http://www.cherry-mt.com/images/goods/20160510/386712e6a715b6fc.jpg" 
+											width="60" height="80"/>	
+									</div>
+									<div class="pull-right hot-text">
+										<p>TORIC LENS星光巧克</p>
+										<p>￥180.00</p>
+									</div>
+								</li>
+								<li class="list-group-item clearfix padding-none">
+									<span class="pull-left text-center">6</span>
+									<div class="pull-right">
+										<img src="http://www.cherry-mt.com/images/goods/20160510/386712e6a715b6fc.jpg" 
+											width="60" height="80"/>	
+									</div>
+									<div class="pull-right hot-text">
+										<p>TORIC LENS星光巧克</p>
+										<p>￥180.00</p>
+									</div>
+								</li>
+							</ul>					        
+					    </div>
+						<div class="col-sm-7 col-md-9 pull-left">
+							<div class="col-sm-12 scol-md-12 col-xs-12 padding-none">
+						        <div class="thumbnail" style="background: black;">
+						             <img src="http://www.cherry-mt.com/images//20160416/b51d9707eaa4be8d.jpg" 
+						             alt="通用的占位符缩略图">
+						         </div>
+						    </div>
+						    <div class="col-sm-6 col-md-4 col-xs-12 padding-none">
+						        <div class="thumbnail">
+						             <img src="http://www.cherry-mt.com/images//20160424/64746f2ce9e8b3ca.jpg" 
+						             alt="通用的占位符缩略图">
+						              <div class="caption">
+						                <p>连续7年蝉联销量冠军宝座 </p>
+						            </div>
+						         </div>
+						    </div>
+						    <div class="col-sm-6 col-md-4 col-xs-12 padding-none">
+						        <div class="thumbnail">
+						             <img src="http://www.cherry-mt.com/images//20160424/867447b9a6ff46ba.jpg" 
+						             alt="通用的占位符缩略图">
+						              <div class="caption">
+						                <p>学生党购买居多</p>
+						            </div>
+						         </div>
+						    </div>
+						    <div class="col-sm-6 col-md-4 col-xs-12 padding-none">
+						        <div class="thumbnail">
+						             <img src="http://www.cherry-mt.com/images//20160424/bf8b9fed38d756b5.jpg" 
+						             alt="通用的占位符缩略图">
+						              <div class="caption">
+						                <p>舒适保湿美瞳首选 </p>
+						            </div>
+						         </div>
+						    </div>
+						</div>
+					</div>
+				</div>
+				<!-- 
+					热销 
+				-->
+				<div class="panel panel-default">
+					<a name="rexiao"></a>
+					<div class="col-xs-12 padding-none">
+				        <div class="thumbnail">
+				            <img src="http://image.meimumeijia.com/anyeye/www/index/lenses-sales-item.jpg" 
+				             alt="通用的占位符缩略图">
+				        </div>
+				    </div>
+					<div class="panel-body text-center">
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images/goods/20160509/f76f8b1ec124266c.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4>Dreamcon极致灰棕</h4>
+					                <p>销售价:￥198.00</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images/goods/20160504/b7299444a8b2fdc9.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4>Dreamcon目妍酒心芭比棕</h4>
+					                <p>销售价:￥220.00</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images/goods/20160504/808f4c998c66cb53.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4>Dreamcon目妍酒心芭比灰</h4>
+					                <p>销售价:￥220.00</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images/goods/20160430/b15f65162f2abe2f.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4>Dreamcon 目妍水晶彩系列</h4>
+					                <p>销售价:￥198.00</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images/goods/20160430/f3a8a5f08cdd4d77.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4>Dreamcon 目妍萌小棕/灰</h4>
+					                <p>销售价:￥198.00</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images/goods/20160429/a83a136a84554b77.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4>Dreamcon目妍星愿</h4>
+					                <p>销售价:￥198.00</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images/goods/20160429/d140d467b5000cd5.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4>Dreamcon目妍精灵灰/棕</h4>
+					                <p>销售价:￥198.00</p>
+					            </div>
+					         </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-xs-12 padding-none">
+					        <div class="thumbnail">
+					             <img src="http://www.cherry-mt.com/images/goods/20160429/14b9c580b4d11071.jpg" 
+					             alt="通用的占位符缩略图">
+					              <div class="caption">
+					                <h4>Dreamcon目妍FRESH清透粉</h4>
+					                <p>销售价:￥198.00</p>
+					            </div>
+					         </div>
+					    </div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+	    	$(function(){
+        	
+            	/*var allGoods = {
+            		Divabisou: [
+            			"想你","奶油三色","初恋三色","花妍","浅棕","小巧环","水润棕"
+            		],
+            		guiShui: [
+            			"bebe shine","SIO硅水凝胶","VON透明片","VON顶级","Bebe angel",
+            			"Bebe beauty","Bebe cool","Bebe magic","Bebe candy","Bebe mix","Bebe sexy","SEENCON NATURAL","on hyal"
+            		],
+            		Dreamcon:  [
+						"雪环(粉/棕/灰)","公主系列","钻石星光","柠檬巧克力","iic","韩视HD","韩视EDGE","星耀金","琉璃浅棕","目妍洛夫可可",
+						"目妍甜心系列","目妍慕斯系列","目妍娃娃黑"	,"目妍摩卡咖啡","目妍浪漫金橘棕","目妍SEXY黑/巧克力","目妍crown皇冠棕",
+						"目妍tiffany银灰","目妍cutie精灵灰/棕","目妍星愿灰/棕","目妍萌小棕/萌小灰","目妍水晶金彩棕/灰","目妍妖精小瞳",
+						"目妍酒心芭比棕/灰","目妍心雅巧克力/心雅棕","FRESH清透粉","棒棒糖（日抛）","千金小姐","colorpia混血三色系列",
+						"Hitea下午茶半年抛","优质三色","糖果系列","恶魔系列","水盈黑","樱花巧克力","抹茶巧克力","卡琪巧克力","极致灰棕"
+            		],
+            		SuperSize: [
+            			"玫瑰系列","甜心棒棒糖","荧彩三色","粉媚天使","曲奇系列","高端金莎系列","典雅系列","大黑环","星光奶油",
+						"泪花朱古力","彩虹四色","两周年纪念款秋叶","三周年纪念款蜂蜜棕","欧美系列","初见系列","星光芭比",
+						"珍珠系列","珍妮三色","流星系列","莹润朱古力","松露朱古力","一周年纪念款雪豹","相关品牌","super size(14)"
+            		],
+            		Polytouch:[
+            			"Polytouch cb","Polytouch ce","Polytouch pm","Polytouch s03","Polytouch oy","Polytouch 无感",
+						"无感灰色","焦糖蜜棕","焦糖朱古力","双周抛六片装（芭比棕）","双周抛六片装（混血三色）"
+            		],
+            		Neo:[
+            			"女皇四色","巨目一代","巧克力三代","幸运四色","小棕环","小灰环","小黑环","巧克力二代",
+						"巧克力一代","独家款式-清新双色系列","深邃系列","冰凌系列","海葵系列","星萌系列",
+						"环彩系列","天使三色","巧克力四代","钻石系列","八芒星","暮色","舒娜系列",
+						"蕾丝系列","心语系列","雪花黑","小蓝环","雪花黑二代","水光系列"
+            		]
+            	}
+				function creatAllGoods(allGoods){
+					var _html = "";
+					for(var arr in allGoods){
+						_html += tml(allGoods[arr]);
+					}
+					function tml(arr){
+						var _len = arr.length;
+						var _tml = 
+	                		"<div class='list-group-item  menu'>"+
+							"	<h4 class='list-group-item-heading '>Divabisou</h4>"+
+							"	<a href='#'>"+ arr[0] +"</a> "+
+							"	<a href='#'>"+ arr[1] +"</a>"+
+							"	<ul class='list-group abs menu-list'>"+
+							"		<li class='list-group-item disabled'>Divabisou</li>";
+						for(var i = 0; i < _len; i++){
+							_tml += "<li class='list-group-item '><span>"+ arr[i] +"</span></li>";
+						}
+						_tml += "</ul></div>";
+						return _tml;
+					}
+					return _html;
+				}*/
+				
+				$(".menu1>a,.menu1>.menu-list a").click(function(){
+					var fenlei = $(".menu>h4>a").text();
+					var shangPing = $(this).text();
+					//alert(fenlei+"  --  "+shangPing)
+					tiaoZhuan({feilei:fenlei,shangpin:shangPing});
+				});
+				$(".menu1>h4>a").click(function(){
+					var fenlei =  $(this).text();
+					alert(fenlei)
+					tiaoZhuan({feilei: fenlei});
+					
+				});
+				$("#other>a").click(function(){
+					var fenlei =  $(this).text();
+					tiaoZhuan({feilei: fenlei});
+				});
+				$("#other .menu-list a").click(function(){
+					var pinPai = $(this).parents("ul").prev("span").text();
+					tiaoZhuan({feilei: pinPai,shangpin:$(this).text()});
+				});
+				$(".min-menu a").click(function(){
+					var _fenlei = $(this).parents(".panel").find(".min-title").text();
+					var _changpin = $(this).text();
+					tiaoZhuan({fenlei: _fenlei,shangpin: _changpin});
+				});
+				
+				function tiaoZhuan(obj){
+					var fenlei = obj.fenlei;
+					var shangpin = obj.shangpin;
+					var parme = "";
+					if (!!shangpin) {
+						parme = "fenlei="+fenlei+"&shangpin="+shangpin;
+					} else{
+						parme = "fenlei="+fenlei;
+					}
+					self.location.href = "chaxun.html?"+parme;
+				}
+				// 轮播图
+				(function(){
+					// 按纽对象
+					var $li_btn = $("#banner .banner-btn-box .btn-list li"),
+						$next = $("#next-xs,#next-lg"),
+						$pre = $("#pre-lg,#pre-xs"),
+						// 图片对象
+						$imgs = $("#banner img"),
+						// 图片张数
+						$imgs_len = $imgs.length - 1,
+						// 索引
+						i = 0;
+					// 上一张
+					$next.click(function(){
+						i = ( i == $imgs_len) ? 0 : i + 1;
+						gunDong($imgs.eq(i), $li_btn.eq(i));
+					});
+					// 下一张
+					$pre.click(function(){
+						i = (i == 0) ? $imgs_len : i - 1;
+						gunDong($imgs.eq(i), $li_btn.eq(i));
+					});
+					// 底部按纽
+					$li_btn.click(function(){
+						var $this = $(this);
+						i = $this.index();
+						gunDong($imgs.eq(i), $this);
+					});
+					// 轮播动画
+					function gunDong(img, btn){
+						img.animate({"opacity":"1"}, 500).siblings().animate({"opacity":"0"}, 500);
+						btn.css("background","black").siblings().css("background","gray");
+					}
+				})();
+			});
+		</script>
+	</body>
+</html>

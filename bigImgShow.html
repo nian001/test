@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<title>
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			ul,li{list-style: none;}
+			body{font-family: "微软雅黑";font-size: 14px;color: #666;}
+			.rel{position: relative;top: 0;left: 0;}/*相对定位*/
+			.abs{position: absolute;top: 0;right: 0;}/*绝对定位*/
+			.panel-body,.img{overflow: hidden;height: 100%;}
+			
+			.imgs{overflow: hidden;padding: 0 20px;}
+			.imgs a.btn-primary{
+				display: block;
+				position: absolute;
+				top: 0px;
+				z-index: 100;
+				width: 20px;
+				height: 106px;
+				line-height: 106px;
+				font-size: 20px;
+				border-radius: 4px;
+			}
+			.imgs a.right{right: -20px;}
+			.imgs a.left{left: -20px;}
+			
+			.imgs .img-list a.img-list-item{display: block;width: 80px;height: 100px;margin-right: 4px;float: left;}
+			.imgs .img-list a.img-list-item img.img-active{border: 2px solid blue;opacity: 0.5;}
+			.imgs .img-list a.img-list-item img{border: 2px solid gray;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel panel-primary row">
+				<div class="panel-heading clearfix text-center">
+					<div class="col-md-2 col-xs-4">商品相册</div>
+					<div class="col-md-8 col-xs-8">Super size星光芭比</div>
+				</div>
+				<div class="panel-body">
+					<div class="clearfix alert text-center">
+						<button type="button" class="btn btn-default fd">放大</button>
+						<button type="button" class="btn btn-default sx">缩小</button>
+						<button type="button" class="btn btn-default hy">还原</button>
+					</div>
+					<div class="img rel">
+						<img src="http://www.cherry-mt.com/images/goods/20160430/8ea9473930eb7d3d.jpg" 
+							width="200" class="show-img center-block img-rounded"/>
+					</div>
+				</div>
+				<style type="text/css">
+					
+				</style>
+				<div class="panel-footer clearfix">
+					<div class="alert text-center alert-success">
+						<span id="index">1</span>-<span id="total">1</span>
+					</div>
+					<div class="col-xs-12 imgs">
+							<div class="rel">
+								<a href="#" class="left btn-primary">
+									<span class="glyphicon glyphicon-chevron-left"></span>
+								</a>
+								<div class="img-list rel clearfix">
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160430/8ea9473930eb7d3d.jpg" width="80" class="img-rounded img-active"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160504/c3b8e8eb21eb757f.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/15f99e12fb12e847.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/8f7a2943b7f5a010.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/3f28c68ba03e03cd.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160405/b6635631902e6597.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160430/8ea9473930eb7d3d.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160504/c3b8e8eb21eb757f.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/15f99e12fb12e847.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/8f7a2943b7f5a010.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/3f28c68ba03e03cd.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160405/b6635631902e6597.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160430/8ea9473930eb7d3d.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160504/c3b8e8eb21eb757f.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/15f99e12fb12e847.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/8f7a2943b7f5a010.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160406/3f28c68ba03e03cd.jpg" width="80" class="img-rounded"/>
+									</a>
+									<a href="#" class="img-list-item">
+										<img src="http://www.cherry-mt.com/images/goods/20160405/b6635631902e6597.jpg" width="80" class="img-rounded"/>
+									</a>
+								</div>
+								<a href="#" class="right btn-primary">
+									<span class="glyphicon glyphicon-chevron-right"></span>
+								</a>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/util.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				function init(){
+					$(".panel-body").height($(window).height() - 310);
+					$(".img-list").width(function(){
+						return $(".img-list .img-list-item").length*84;;
+					});
+					$(".show-img").stop().animate({"left": ($(".show-img").parent().width()-$(".show-img").width())/2, "top": 0}, 400);
+					$("#total").text($(".img-list a.img-list-item").length);
+					nDrag($(".show-img")[0]);
+				}
+				init();
+				$(window).resize(init);
+				
+				function scalingImg(){
+					var _showImg = $(".show-img");
+					var _width = _showImg.width();
+					$(".fd").click(function(){
+						_showImg.stop(true,true).animate({"width": _showImg.width()*1.2}, 200);
+					});
+					$(".sx").click(function(){
+						_showImg.stop(true,true).animate({"width": _showImg.width()/1.2}, 200);
+					});
+					$(".hy").click(function(){
+						_showImg.stop(true,true).animate({"width": _width}, 200, function(){
+							$(this).animate({"left": (_showImg.parent().width()-_showImg.width())/2, "top": 0});
+						});
+					});
+				}
+				scalingImg();
+				
+				function changeImg(){
+					var $imgs = $(".img-list a.img-list-item");
+					var $showImg = $(".show-img"); 
+					$imgs.click(function(){
+						var _this = $(this);
+						var _src = _this.children("img").addClass("img-active").attr("src");
+						_this.siblings().children("img").removeClass("img-active");
+						$showImg.attr("src", _src);
+						$("#index").text(_this.index() + 1);
+					});
+				}
+				changeImg();
+				
+				function nextPrev(){
+					var $imgList = $(".img-list");
+					var $imgs = $(".imgs");
+					$(".imgs .left").click(function(){
+						var left = $imgList.position().left;
+						var _left = ( left >= 0 ) ? 0 : left + 84;
+						$imgList.stop(true, true).animate({"left": _left}, 100);
+					});
+					$(".imgs .right").click(function(){
+						var left = $imgList.position().left;
+						var maxLeft = ( $imgList.width() + left ) - $imgs.width();
+						var _left = ( maxLeft < 0 ) ? left : left - 84;
+						$imgList.stop(true, true).animate({"left": _left}, 100);
+					});
+				}
+				nextPrev();
+			});
+			
+			//拖拽插件nDrag(要移动的对象,触发对象移动的对象(默认为其本身))
+			function nDrag(dragDom,targetDomId){
+				dragDom.onmousedown = function(e){
+					var ev = e || window.event;
+					ev.preventDefault(); 
+					this.style.cursor = "move";
+					if(targetDomId){
+						var target = ev.target || ev.srcElement;
+						if(("#"+target.id)==targetDomId)
+							fnDargMover(dragDom,ev);
+						else
+							return false;
+					}else{
+						fnDargMover(dragDom,ev);
+					}
+				}
+			}	
+			function fnDargMover(dragDom,ev,moveCallback,upCalback){
+				var cx = ev.clientX;
+				var cy = ev.clientY;
+				var Top = parseInt(dragDom.offsetTop);
+				var Left = parseInt(dragDom.offsetLeft);
+				dragDom.style.left=(Left)+"px";
+				dragDom.style.top=(Top)+"px";
+				dragDom.style.position="absolute";
+				document.onmousemove = function(e){
+					var me = e || window.event;
+					var mx = me.clientX;
+					var my = me.clientY;
+					dragDom.style.left=(mx-cx+Left)+"px";
+					dragDom.style.top=(my-cy+Top)+"px";
+					
+					if(moveCallback)moveCallback.call(dragDom);
+				}
+				document.onmouseup = function(){
+					dragDom.style.cursor = "inherit";
+					document.onmousemove = null;
+					delete document.onmouseup;
+					if(upCalback)upCalback.call(dragDom);
+				}
+			}
+		</script>
+	</body>
+</html>
